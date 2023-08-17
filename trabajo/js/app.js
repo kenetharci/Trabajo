@@ -1,23 +1,22 @@
-'use script'
-
-const numbers = [];
-        const numberInput = document.getElementById('numberInput');
-        const addButton = document.getElementById('addButton');
-        const resultParagraph = document.getElementById('result');
-
-        addButton.addEventListener('click', () => {
-            const enteredNumber = parseInt(numberInput.value);
-            if (!isNaN(enteredNumber)) {
-                numbers.push(enteredNumber);
-                numberInput.value = '';
-            }
-        });
-
-        setInterval(() => {
-            if (numbers.length > 0) {
-                const maxNumber = Math.max(...numbers);
-                const minNumber = Math.min(...numbers);
-
-                resultParagraph.innerHTML = `Número Mayor: ${maxNumber}<br>Número Menor: ${minNumber}`;
-            }
-        }, 1000); // Actualiza cada segundo
+'use strict'
+function capturarNumeros() {
+    let cantidad = parseInt(document.getElementById("cantidad").value);
+    
+    let numeros = [];
+    
+    for (let i = 0; i < cantidad; i++) {
+      let numero = parseInt(window.prompt("Ingrese el número " + (i+1)));
+      if (isNaN(numero)) {
+        window.alert("Por favor, ingrese un número válido.");
+        i--;
+      } else {
+        numeros.push(numero);
+      }
+    }
+    
+    let mayor = Math.max(...numeros);
+    let menor = Math.min(...numeros);
+    
+    document.getElementById("mayor").innerHTML = "El número mayor es: " + mayor;
+    document.getElementById("menor").innerHTML = "El número menor es: " + menor;
+  }

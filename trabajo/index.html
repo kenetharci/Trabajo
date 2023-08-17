@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="styleheet" href="./css/styles.css">
-    <title>Números Mayor y Menor</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./app.js"></script>
+    <title>Numeros enteros</title>
 </head>
 <body>
-    <h1>Ingrese números enteros</h1>
-    <form id="numberForm">
-        <label for="numberInput">Número:</label>
-        <input type="number" id="numberInput">
-        <button type="button" id="addButton">Agregar Número</button>
-    </form>
-    <h2>Resultados:</h2>
-    <p id="result"></p>
+    <h1 id="h1">Programa de números enteros</h1>
 
-    <script src="./scripts/app.js"></script>
-</body>
-</html>
-
+    <div id="container">
+      <label for="cantidad">Ingrese la cantidad de números:</label>
+      <input type="number" id="cantidad">
+      <button onclick="capturarNumeros()">Capturar</button>
+  
+      <div id="resultado">
+        <p id="mayor"></p>
+        <p id="menor"></p>
+      </div>
+    </div>
+  
+  </body>
+  </html>
 
